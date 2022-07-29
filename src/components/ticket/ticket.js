@@ -10,7 +10,6 @@ const Ticket = () => {
     let copyFirstField = Object.assign([], firstField);
     let copySecondField = Object.assign([], secondField);
 
-
     let data = {
         selectedNumber: {
             firstField: firstField,
@@ -19,7 +18,6 @@ const Ticket = () => {
         isTicketWon: isTicketWon
     };
 
-    
     function firstFieldSubmit(e, i) {
         //e.preventDefault();
         if (firstField.includes(i)) {
@@ -49,7 +47,6 @@ const Ticket = () => {
     const winFirstField = [1, 2, 3, 4, 5, 6, 7 , 8];
     const winSecondField = [1];
 
-
     const resalt = () => {
         
         setClickResalt(true)
@@ -62,21 +59,14 @@ const Ticket = () => {
             return winSecondField.includes(item)
         })
 
-        console.log('checkFirstField', checkFirstField)
-        console.log('checkSecondField', checkSecondField)
-
-        
         const matchFirstField = checkFirstField.filter(function(value){return value});
-        console.log(matchFirstField.length);
-
         const matchSecondField = checkSecondField.filter(function(value){return value});
-        console.log(matchSecondField.length);
         
         if ( matchFirstField.length >= 4 || (matchFirstField.length >= 3 && matchSecondField.length === 1) ) {
-            console.log('ПоБЕДА!!!');
+            //console.log('ПоБЕДА!!!');
             setIsTicketWon(true)
         } else {
-            console.log('проиграли');
+            //console.log('проиграли');
             setIsTicketWon(false)
         }
         
@@ -98,10 +88,7 @@ const Ticket = () => {
             randomSecond[randomSecond.length] = randomnumber2;
         }
         setSecondField(randomSecond)
-
-
     }
-
 
     return (
         <div>
@@ -187,11 +174,7 @@ const Ticket = () => {
                 )
             }
         </div>
-    )
-        
-
-        
-    
+    )  
 }
 
 export default Ticket;

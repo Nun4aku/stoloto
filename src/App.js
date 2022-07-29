@@ -3,9 +3,6 @@ import './App.css';
 import Ticket from './components/ticket/ticket';
 
 function App() {
-
-  
-
   return (
     <div className="App">
       <Ticket />
